@@ -1,141 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Personal Blog</title>
-        <meta name="description" content="关键字" />
-        <meta name="keywords" content="关键词" />
-        <link rel="icon" href="./favicon.ico" />
-        <link href="https://cdn.bootcdn.net/ajax/libs/viewerjs/1.10.1/viewer.min.css" rel="stylesheet" />
-        <link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-        <link rel="stylesheet" href="./css/css.css" />
-    </head>
-
-    <body>
-        <div id="app">
-            <div class="load">
-                <p>加载中...</p>
-                <div class="loadLove">
-                    <div class="loadLeft"></div>
-                    <div class="loadRight"></div>
-                </div>
-            </div>
-
-            <div class="Box">
-                <!-- ALL -->
-                <div id="Indexbox">
-                    <!-- 遮罩层 -->
-                    <div
-                        :class="{ blackWindow: true, blackWindowShow: tabState || menuTabState || pagesTabState }"
-                        @click="closeBlackWindow"
-                    ></div>
-
-                    <!-- 顶部菜单 -->
-                    <div class="menu">
-                        <img src="./favicon.ico" alt="favicon" />
-                        <ul class="menuUL">
-                            <li>
-                                <a href="mp.pdf" target="_blank">研究笔记</a>
-                            </li>
-                            <li>
-                                <a href="mp.pdf" target="_blank">数据集</a>
-                            </li>
-                            <li>
-                                <a href="mp.pdf" target="_blank">Python代码块</a>
-                            </li>
-                            <li>
-                                <a href="mp.pdf" target="_blank">我的论文</a>
-                            </li>
-                            
-                        </ul>
-                        <p>圣三一大学-计算机学院 </p>
-                    </div>
-
-                    <!-- 左半部分页面（Brief Introduction部分） -->
-                    <div class="pages" id="pages">
-                        <!-- 页面选项卡 -->
-                        <div class="pagesTitle">
-                            <div
-                                :class="{ pagesTitleOption: true, pagesTitleOptionClick: pageIndex == 0 }"
-                                id="pagesTitleOption1"
-                                @click="changePageIndex(0)"
-                            >
-                                <img
-                                    src="./images/stuck_out_tongue_winking_eye.png"
-                                    alt="stuck_out_tongue"
-                                />
-                                <p>Brief Introduction</p>
-                            </div>
-                            </div>
-                        </div>
-
-                        <!-- 页面 -->
-                        <div :class="{ pagesText: true, pagesTextShow: pageIndex == 0 }">
-                            <div class="pagesTextBox">
-                                <h1>NAME：<br />佳璇 谢</h1>
-                                <div class="pagesTextBoxImg">
-                                    <img
-                                        src=""
-                                        alt="这里可以放一张你的图片，让老师想起来你是谁哈哈，当有图片的时候这个就不会显示"
-                                        class="n0tsImg"
-                                    />
-                                </div>
-                               
-                                <p>简单介绍一下自己</p>
-                                <p>介绍一下自己的班级</p>
-                                <p>这里可以来一句名言激励一下自己，顺便让老师会觉得你是个好孩子</p>
-                                <div class="pagesTextBoxImg">
-                                    <img
-                                        src="./images/"
-                                        alt="这里可以放一张你们班级的合照"
-                                        class="n0tsImg"
-                                    />
-                                </div>
-                            </div>
-                        </div>
-
-                    <!-- 右半部分页面（即Something~） -->
-                    <div class="pages pages2">
-                        <!-- 页面选项卡 -->
-                        <div class="pagesTitle">
-                            <div class="pagesTitleOption pagesTitleOption-click">
-                                <img src="./images/icecream.png" alt="icecream" />
-                                <p>Something~</p>
-                            </div>
-                        </div> 
-
-                        <!-- 页面 -->
-                        <div class="pagesText pagesTextShow">
-                            <div class="pagesTextBox pagesTextBox2">
-                                <h1>圣三一大学
-                                </h1>
-                                <p>2023</p>
-                                <p>故事开始</p>
-                                <div class="pagesTextBoxImg">
-                                    <img
-                                        src="https://ts1.cn.mm.bing.net/th/id/R-C.819d7657aa9d96904e4c570d129a3deb?rik=fZ%2bE0hGdtn%2fO8w&riu=http%3a%2f%2f3568023.s21i.faimallusr.com%2f2%2fABUIABACGAAgq4GA1QUoqJzopQUwhAc4hAc.jpg&ehk=1ccXZENRSEuztv952oMtkymfRsKnLu%2f%2bP71Z1TGmP5k%3d&risl=&pid=ImgRaw&r=0"
-                                        alt="School"
-                                        class="n0tsImg"
-                                    />
-                                </div>
-                                <p>学校简介：</p>
-                                <p>学校于1592年根据皇家特许状创建，以牛津大学、剑桥大学为蓝本而创建，地点在前万圣节修道院，是都柏林大学的第一所也是唯一一所授予学位的学院。18世纪，学校进行建筑运动，建造图书馆、议会广场等古典建筑； [30]1740年，法学院成立，是学校较早成立的学院，欧洲领先的法学院之一，被评为世界前100名的法学院。2024年QS世界大学排名中，都柏林圣三一大学位列第81名，爱尔兰地区位列第1名;圣三一商学院坐拥欧洲培养企业家最多的大学，获得AACSB、AMBA和EQUIS“三皇冠”认证。</p>
-                            </div>
-                        </div>
-                    </div> 
-
-                    <!-- 底部说明 -->
-                    <div class="footer">
-                        <p class="left">@谢家璇的个人主页 </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <script src="https://cdn.bootcdn.net/ajax/libs/vue/2.6.9/vue.min.js"></script>
-        <script src="https://cdn.bootcdn.net/ajax/libs/axios/0.21.0/axios.min.js"></script>
-        <script src="https://cdn.bootcdn.net/ajax/libs/viewerjs/1.10.1/viewer.min.js"></script>
-        <script src="./js/1.js" type="module"></script>
-    </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Webpage</title>
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            background-color: #e0f7fa;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            text-align: center;
+        }
+        header {
+            margin-bottom: 20px;
+        }
+        header h1 {
+            font-size: 3em;
+            color: #006064;
+            margin: 0;
+        }
+        header p {
+            font-size: 1.5em;
+            color: #004d40;
+            margin: 10px 0;
+        }
+        .personal-info {
+            margin-bottom: 20px;
+        }
+        .personal-info p {
+            font-size: 1.2em;
+            color: #004d40;
+            margin: 5px 0;
+        }
+        .buttons {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .buttons a {
+            text-decoration: none;
+            color: white;
+            background-color: #00796b;
+            padding: 15px 30px;
+            margin: 10px;
+            border-radius: 8px;
+            font-size: 1.2em;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .buttons a:hover {
+            background-color: #004d40;
+            transform: translateY(-3px);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Probabilities of interval relations</h1>
+        <p>The interval algebra of Allen 1983 is one of the most commonly used approaches to time and events in natural language processing (Jurafsky and Martin 2023, chapter 22). The aim of this project is to introduce probabilities on relations between intervals, based on transitions between states, conceived at different granularities and recording varying extents of history.</p>
+    </header>
+    <div class="personal-info">
+        <p>Name: Jiaxuan Xie
+        <p>Email: xiej1@tcd.ie</p>
+        <p>University: Trinity College Dublin</p>
+        <p>Major: Computer Science - Intelligent Systems</p>
+        <p>Student ID: 23340340</p>
+    </div>
+    <div class="buttons">
+        <a href="research note.pdf">Research Notes</a>
+        <a href="https://app.diagrams.net/#G1X7TSXOtAjbDFikSPm5J4af2G4dVI_RzA#%7B%22pageId%22%3A%22mFWIIRnueXCLKf2M11NT%22%7D">Relational Graph</a>
+        <a href="https://colab.research.google.com/drive/1chU4JvqlK75ARtrsKmFihzIh44WERMMd#scrollTo=i1X9edOOSGBa">Python Notebook</a>
+        <a href="https://projects.scss.tcd.ie/project/probabilities-of-interval-relations/">Dissertation</a>
+    </div>
+</body>
 </html>
