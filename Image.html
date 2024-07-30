@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Graphs and Descriptions</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .graph {
+            margin: 20px 0;
+            text-align: center;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .description {
+            margin-top: 10px;
+            padding: 10px;
+            border-radius: 5px;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="graph">
+            <img src="Pic1.png" alt="State Transition Graph">
+            <div class="description">
+                <h3>State transition path digraph</h3>
+                <p>Using these 16 states, we established a logic for state transitions. Individuals can transition from unborn to young, young to old, young to dead at a lower rate, and old to dead at a higher rate.
+                Based on this logic, we created a directed graph representing transitions from the initial state (both individuals unborn) to the final state (both individuals dead).
+                From this graph, we identified 126 paths from start to end, with states represented numerically: 0 for unborn, 1 for young, 2 for old, and 3 for deceased.</p>
+            </div>
+        </div>
+        <div class="graph">
+            <img src="Pic2.png" alt="Number of Paths for Each Path Type">
+            <div class="description">
+                <h3>The number of paths in 13 Allen interval relationships</h3>
+                <p>This chart shows the number of paths for each type of Allen interval relation in our model. The x-axis represents the number of paths, while the y-axis lists the different path types. Here's a summary of the key points:
+                <ul>
+                    <li>Contains and During each have 14 paths, indicating these relationships are fairly common in the modeled scenarios.</li>
+                    <li>Finished by, Finishes, Started by, and Starts each have 10 paths.</li>
+                    <li>Overlapped by and Overlaps have the highest number of paths, each with 18, showing these relations are the most frequent.</li>
+                    <li>Met by and Meets have 4 paths each, indicating they are less common.</li>
+                    <li>After and Before also have 4 paths each.</li>
+                    <li>Equal has 6 paths, showing the occurrence of simultaneous events is moderate.</li>
+                </ul>
+                </p>
+            </div>
+        </div>
+        <div class="graph">
+            <img src="Pic3.png" alt="Probability Distribution of Different Allen Intervals">
+            <div class="description">
+                <h3>Probability distribution of different relations of 13 Allen intervals in four states</h3>
+                <p>The model accurately reflected higher Death rates for older individuals, leading to higher frequencies of "Overlap" and "During" relations. It also accurately reflected gender-specific death rates, with lower death rates for females leading to higher probabilities of certain interval relations involving longer female lifespans.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
